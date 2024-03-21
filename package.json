@@ -1,6 +1,6 @@
 {
   "name": "truncate-tool",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "GitHub Action to truncate text at a certain line count and add a read more link",
   "main": "dist/index.js",
   "scripts": {
