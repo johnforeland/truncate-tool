@@ -1,0 +1,25 @@
+name: "truncate-tool"
+author: "John Føreland"
+description: "Truncates text by line count or character count and optionally adds a 'read more' line at the end"
+inputs:
+  text:
+    description: "Text to truncate"
+    required: true
+  max_lines:
+    description: "Maximum number of lines to keep"
+    required: false
+  max_characters:
+    description: "Maximum number of characters to keep"
+    required: false
+  string_to_append:
+    description: "String to append to bottom of the output"
+    required: false
+outputs:
+  text:
+    description: "Truncated text"
+runs:
+  using: "node20"
+  main: "index.js"
+branding:
+  icon: "heart"
+  color: "red"
