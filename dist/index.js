@@ -2720,7 +2720,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getInputs = void 0;
 const core = __importStar(__nccwpck_require__(186));
 const getInputs = () => {
-    const TEXT = core.getInput('text', { required: true });
+    const TEXT = core.getInput('text', { required: false });
     const MAX_LINES = core.getInput('max_lines', { required: false });
     const MAX_CHARACTERS = core.getInput('max_characters', { required: false });
     const STRING_TO_APPEND = core.getInput('string_to_append', { required: false });

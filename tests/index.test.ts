@@ -4,6 +4,21 @@ import { TruncateTool } from '../src/main'
 
 jest.mock('../src/action-inputs')
 
+describe('EMPTY TEXT', () => {
+  it('no change (empty string)', async () => {
+    const mock: Partial<IActionInputs> = { ...getMock(0), MAX_LINES: 0 }
+    ;(getInputs as any).mockImplementation(() => mock)
+    const result = new TruncateTool().truncate()
+    expect(result).toBe('')
+  })
+  it('no truncate (empty string)', async () => {
+    const mock: Partial<IActionInputs> = { ...getMock(0), MAX_LINES: 5 }
+    ;(getInputs as any).mockImplementation(() => mock)
+    const result = new TruncateTool().truncate()
+    expect(result).toBe('')
+  })
+})
+
 describe('1 line in input', () => {
   describe('MAX_LINES', () => {
     it('truncates to 0 lines', async () => {

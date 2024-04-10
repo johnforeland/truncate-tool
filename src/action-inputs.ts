@@ -8,7 +8,7 @@ export interface IActionInputs {
 }
 
 export const getInputs = (): IActionInputs => {
-  const TEXT: string = core.getInput('text', { required: true })
+  const TEXT: string = core.getInput('text', { required: false })
   const MAX_LINES: string = core.getInput('max_lines', { required: false })
   const MAX_CHARACTERS: string = core.getInput('max_characters', { required: false })
   const STRING_TO_APPEND: string = core.getInput('string_to_append', { required: false })
