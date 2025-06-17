@@ -20,6 +20,7 @@ jobs:
       - run: npm ci
       - run: npm run format:check
       - run: npm run lint
+      - run: npm run test
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
