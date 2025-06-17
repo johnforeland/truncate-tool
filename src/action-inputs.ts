@@ -2,9 +2,9 @@ import * as core from '@actions/core'
 
 export interface IActionInputs {
   TEXT: string
-  MAX_LINES: number
-  MAX_CHARACTERS: number
-  STRING_TO_APPEND: string
+  MAX_LINES?: number
+  MAX_CHARACTERS?: number
+  STRING_TO_APPEND?: string
 }
 
 export function getText(): string {

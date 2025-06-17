@@ -27278,7 +27278,7 @@ class TruncateTool {
     }
     truncateByCharacters() {
         const appendLength = this.inputs.STRING_TO_APPEND ? this.inputs.STRING_TO_APPEND.length + 1 : 0;
-        const maxCharacters = this.inputs.MAX_CHARACTERS;
+        const maxCharacters = this.inputs.MAX_CHARACTERS ?? 0;
         const max = maxCharacters - appendLength;
         if (maxCharacters == 0)
             return '';
@@ -27294,7 +27294,7 @@ class TruncateTool {
     }
     truncateByLines() {
         const appendLength = this.inputs.STRING_TO_APPEND ? 2 : 0;
-        const maxLines = this.inputs.MAX_LINES;
+        const maxLines = this.inputs.MAX_LINES ?? 0;
         const max = maxLines - appendLength;
         if (maxLines == 0)
             return '';
@@ -27308,13 +27308,7 @@ class TruncateTool {
         return truncated_lines.join('\n');
     }
     truncate() {
-        if (this.inputs.MAX_LINES != undefined) {
-            return this.truncateByLines();
-        }
-        else if (this.inputs.MAX_CHARACTERS != undefined) {
-            return this.truncateByCharacters();
-        }
-        return '';
+        return this.inputs.MAX_LINES ? this.truncateByLines() : this.truncateByCharacters();
     }
 }
 
