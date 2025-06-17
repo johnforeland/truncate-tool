@@ -6,6 +6,6 @@
     "moduleResolution": "NodeNext",
     "outDir": "./dist"
   },
-  "exclude": ["tests", "coverage", "dist", "node_modules"],
+  "exclude": ["tests", "coverage", "dist", "node_modules", "release.config.mjs"],
   "include": ["src"]
 }
