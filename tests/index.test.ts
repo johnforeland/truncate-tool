@@ -1,6 +1,6 @@
 import { describe } from 'jest-circus'
 import { getInputs, IActionInputs } from '../src/action-inputs'
-import { TruncateTool } from '../src/main'
+import { TruncateTool } from '../src/truncate'
 
 jest.mock('../src/action-inputs')
 
@@ -171,7 +171,7 @@ describe('STRING_TO_APPEND', () => {
 })
 
 function getMock(lines: number = 1): Partial<IActionInputs> {
-  let text: string[] = []
+  const text: string[] = []
   for (let i = 0; i < lines; i++) {
     text.push('Lorem ipsum dolor sit amet')
   }

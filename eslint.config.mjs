@@ -74,5 +74,13 @@ export default [
       'no-unused-vars': 'off',
       'prettier/prettier': 'error'
     }
+  },
+  {
+    files: ['tests/**/*.ts', 'tests/**/*.tsx'],
+    languageOptions: {
+      parserOptions: {
+        project: null
+      }
+    }
   }
 ]
