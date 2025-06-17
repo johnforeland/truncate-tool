@@ -4,7 +4,7 @@ description: "Truncates text by line count or character count and optionally add
 inputs:
   text:
     description: 'Text to truncate'
-    required: false
+    required: true
   max_lines:
     description: 'Maximum number of lines to keep'
     required: false

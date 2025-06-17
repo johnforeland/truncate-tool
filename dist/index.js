@@ -28090,7 +28090,7 @@ function requireCore () {
 var coreExports = requireCore();
 
 function getText() {
-    return coreExports.getInput('text', { required: false });
+    return coreExports.getInput('text', { required: true });
 }
 function getMaxLines() {
     const value = coreExports.getInput('max_lines', { required: false });

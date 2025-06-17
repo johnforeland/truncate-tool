@@ -8,7 +8,7 @@ export interface IActionInputs {
 }
 
 export function getText(): string {
-  return core.getInput('text', { required: false })
+  return core.getInput('text', { required: true })
 }
 
 export function getMaxLines(): number {
