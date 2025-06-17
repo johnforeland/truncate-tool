@@ -2,6 +2,7 @@
   "name": "truncate-tool",
   "version": "0.5.0",
   "description": "GitHub Action to truncate text at a certain line count and add a read more link",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnforeland/truncate-tool.git"
@@ -15,7 +16,6 @@
     "url": "https://github.com/johnforeland/truncate-tool/issues"
   },
   "homepage": "https://github.com/johnforeland/truncate-tool#readme",
-  "main": "dist/index.js",
   "engines": {
     "node": ">=20"
   },
@@ -23,8 +23,6 @@
     ".": "./dist/index.js"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
     "preinstall": "cp scripts/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit && echo 'hook copied' && cp .env.example .env",
     "bundle": "npm run format:write && npm run package",
     "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
@@ -33,7 +31,9 @@
     "lint": "npx eslint .",
     "local-action": "npx @github/local-action . src/main.ts .env",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "all": "npm run format:write && npm run lint && npm run coverage && npm run package"
+    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
+    "ci-test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
+    "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
   },
   "dependencies": {
     "@actions/core": "^1.11.1"
@@ -62,7 +62,11 @@
     "jest-circus": "^30.0.0",
     "make-coverage-badge": "^1.2.0",
     "prettier": "^3.5.3",
+    "ts-jest": "^29.3.4",
+    "ts-jest-resolver": "^2.0.1",
     "prettier-eslint": "^16.4.2",
+    "eslint-plugin-jest": "^28.13.0",
+    "@jest/globals": "^29.7.0",
     "typescript": "^5.8.3"
   }
 }

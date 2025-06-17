@@ -1,4 +1,4 @@
-import { getInputs, IActionInputs } from './action-inputs'
+import { getInputs, IActionInputs } from './action-inputs.js'
 
 export class TruncateTool {
   inputs: IActionInputs

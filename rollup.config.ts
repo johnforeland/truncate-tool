@@ -3,30 +3,16 @@
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import license from 'rollup-plugin-license'
-import json from '@rollup/plugin-json'
 
 const config = {
-  input: ['src/index.ts'],
+  input: 'src/index.ts',
   output: {
     esModule: true,
-    dir: 'dist',
-    entryFileNames: '[name].js',
+    file: 'dist/index.js',
     format: 'es',
     sourcemap: true
   },
-  plugins: [
-    typescript(),
-    json(),
-    nodeResolve({ preferBuiltins: true }),
-    commonjs(),
-    license({
-      thirdParty: {
-        includeSelf: true,
-        output: 'dist/licenses.txt'
-      }
-    })
-  ]
+  plugins: [typescript(), nodeResolve({ preferBuiltins: true }), commonjs()]
 }
 
 export default config
