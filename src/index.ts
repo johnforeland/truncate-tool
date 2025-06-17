@@ -1,5 +1,8 @@
-import * as core from '@actions/core'
-import { TruncateTool } from './main'
+/**
+ * The entrypoint for the action. This file simply imports and runs the action's
+ * main logic.
+ */
+import { run } from './main.js'
 
-const tool = new TruncateTool()
-core.setOutput('text', tool.truncate())
+/* istanbul ignore next */
+run()
