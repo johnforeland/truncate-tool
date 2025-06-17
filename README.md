@@ -12,7 +12,7 @@ jobs:
   truncate:
     runs-on: ubuntu-latest
     steps:
-      - uses: johnforeland/truncate-tool@v0.5
+      - uses: johnforeland/truncate-tool@v1
         id: truncate-lines
         with:
           text: 'my\nstring'
@@ -21,7 +21,7 @@ jobs:
 
       - run: echo "${{ steps.truncate-lines.outputs.text }}" # should be 'my'
 
-      - uses: johnforeland/truncate-tool@v0.5
+      - uses: johnforeland/truncate-tool@v1
         id: truncate-characters
         with:
           text: 'my\nstring'
@@ -30,7 +30,7 @@ jobs:
 
       - run: echo "${{ steps.truncate-characters.outputs.text }}" # should be 'my\nstr' (because newline counts as one characters)
 
-      - uses: johnforeland/truncate-tool@v0.5
+      - uses: johnforeland/truncate-tool@v1
         id: truncate-with-append
         with:
           text: 'my\nstring\nhas\multiple\nlines'
