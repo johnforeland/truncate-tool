@@ -2,7 +2,7 @@
 
 npx branch-name-lint branch.config.json
 
-npm run lint
+npx lint-staged
 
 echo "Running 'npm run bundle'"
 
